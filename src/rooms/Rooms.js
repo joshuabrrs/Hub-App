@@ -5,21 +5,7 @@ import { Header, Body, Left, Right, Icon, Button, Title } from 'native-base';
 
 import RoomScreen from './screens/RoomScreen.js';
 
-export default class RoomStackNav extends React.Component {
-  static navigationOptions = {
-      drawerIcon: ({tintColor}) => (
-          <Icon name="calendar" style={{fontSize:24, color:tintColor }} />
-      )
-  }
-
-  render() {
-    return (
-      <StackNav />
-    )
-  }
-}
-
-const StackNav = createStackNavigator(
+export default RoomStackNav = createStackNavigator(
   {
     Home: {
       screen: RoomScreen,

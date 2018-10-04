@@ -3,23 +3,9 @@ import { createStackNavigator } from 'react-navigation';
 import { StyleSheet, Text, View, Platform, StatusBar } from 'react-native';
 import { Header, Body, Left, Right, Icon, Button, Title } from 'native-base';
 
-import HomeScreen from './screens/HomeScreen.js'
+import HomeScreen from './screens/HomeScreen.js';
 
-export default class HomeStackNav extends React.Component {
-  static navigationOptions = {
-      drawerIcon: ({tintColor}) => (
-          <Icon name="home" style={{fontSize:24, color:tintColor }} />
-      )
-  }
-
-  render() {
-    return(
-      <StackNav />
-    )
-  }
-}
-
-const StackNav = createStackNavigator(
+export default HomeStackNav = createStackNavigator(
   {
     Home: {
       screen: HomeScreen,
@@ -27,5 +13,10 @@ const StackNav = createStackNavigator(
         title: 'Home'
       })
     }
+  }, {
+    headerTitleStyle: {
+      textAlign: 'center',
+      alignSelf: 'center' //if style using flexbox
+}
   }
 )
